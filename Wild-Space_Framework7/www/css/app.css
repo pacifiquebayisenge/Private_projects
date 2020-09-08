@@ -1,0 +1,66 @@
+/* iOS Cordova Tweak */
+.device-cordova.device-ios {
+  height: 100vh;
+}
+
+/* Custom color theme properties */
+:root {
+  --f7-theme-color: #ff0000;
+  --f7-theme-color-rgb: 255, 0, 0;
+  --f7-theme-color-shade: #d60000;
+  --f7-theme-color-tint: #ff2929;
+}
+
+/* Your app custom styles here */
+
+.player {
+
+
+  background-image: url("../assets/spaceship-pixel-art-maker-340915.png");
+  height: 4em;
+  width: 3em;
+  background-color: white;
+  position: absolute;  
+	top: 80%;
+  left: 50%;   
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.header {
+
+  width: 100%;
+  display: flex;
+}
+
+.headerL {
+  width: 30%;
+  margin-left: 5%;
+
+}
+
+.headerM {
+  width: 30%;
+  text-align: center;
+
+}
+
+.headerR {
+  text-align: right;
+  width: 30%;
+  margin-right: 5%;
+}
+
+body {
+  background-color: black;
+}
+.page {
+  background-image: url("../assets/Stars.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  
+  margin: 0em;
+  padding: 0em;
+}
+

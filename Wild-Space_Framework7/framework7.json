@@ -1,0 +1,33 @@
+{
+  "cwd": "C:\\Users\\hpaci\\Documents\\GitHub\\Private_projects/Wild-Space_Framework7",
+  "type": [
+    "cordova"
+  ],
+  "name": "Wild Space",
+  "framework": "core",
+  "template": "blank",
+  "bundler": false,
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": true,
+    "color": "#ff0000",
+    "darkTheme": true,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false,
+  "pkg": "io.framework7.myapp",
+  "cordova": {
+    "folder": "cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": [
+      "cordova-plugin-statusbar",
+      "cordova-plugin-keyboard",
+      "cordova-plugin-splashscreen",
+      "cordova-plugin-device"
+    ]
+  }
+}
