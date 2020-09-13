@@ -55,12 +55,66 @@
 body {
   background-color: black;
 }
-.page {
+.page, #app {
   background-image: url("../assets/Stars.png");
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 90% auto;
   
   margin: 0em;
   padding: 0em;
 }
 
+.hinder {
+	position: absolute;
+	top: 6%;
+	height: 4vw;
+	width: 30vw;
+	background-size: contain;
+	background-color: none;
+	border: solid 1px white;
+}
+
+#hinder_2 {
+	right: 0vw;
+	
+}
+
+#hinder_1 {
+	left: 0vw;
+	
+}
+
+
+
+/* ls het scherm een breedte kleiner dan 800 pixels heeft. */
+
+@media screen and (min-width: 1000px) {
+  
+  #app {
+
+    width: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid white 3pt
+  }
+
+  .spaceShip {
+		height: 10vw;
+		width: 10vw;
+		position: absolute;
+		top: 80%;
+	}
+
+	.hinder {
+    height: 4vw;
+    width: 10vw;;
+  }
+  
+  #player {
+		width: 8em;
+    height: 10em;
+		position: absolute;
+		top: 80%;
+	}
+
+}

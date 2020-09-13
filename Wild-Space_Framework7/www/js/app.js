@@ -45,10 +45,12 @@ var app = new Framework7({
   },
 });
 
-const PLAYER = $$("#player")[0]
+const PLAYER = $$("#player")[0];
+const gameScreen= $$("#app")[0];
 
 document.addEventListener('touchstart', function(e) {
-  //  coördinaten ophalen
+  // touch coördinaten ophalen
+
  let touchX = e.touches[0].clientX;
  let touchY = e.touches[0].clientY;
  let x = (100 * touchX / screen.width ) -5;
@@ -70,12 +72,10 @@ document.addEventListener('touchstart', function(e) {
     y = 93.08
   }
 
-  // if player goes too far down
+  // if player goes too far up
   if (y < 5) {
     y = 5
   }
-
-
 
   PLAYER.style.left = x + '%';
   PLAYER.style.top = y + '%';
