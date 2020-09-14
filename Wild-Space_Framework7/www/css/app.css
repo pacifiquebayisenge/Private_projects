@@ -58,7 +58,7 @@ body {
 .page, #app {
   background-image: url("../assets/Stars.png");
   background-repeat: no-repeat;
-  background-size: 90% auto;
+  background-size: cover;
   
   margin: 0em;
   padding: 0em;
@@ -86,13 +86,14 @@ body {
 
 
 
-/* ls het scherm een breedte kleiner dan 800 pixels heeft. */
+/* responsive: change properties when screensize changes */
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (min-height: 1000px) {
   
   #app {
 
-    width: 10px;
+    width: 800px;
+    height: 1024px;
     margin-left: auto;
     margin-right: auto;
     border: solid white 3pt
@@ -106,15 +107,17 @@ body {
 	}
 
 	.hinder {
-    height: 4vw;
+    height: 2vw;
     width: 10vw;;
   }
   
   #player {
-		width: 8em;
-    height: 10em;
+		width: 4em;
+    height: 5em;
 		position: absolute;
 		top: 80%;
 	}
 
 }
+
+

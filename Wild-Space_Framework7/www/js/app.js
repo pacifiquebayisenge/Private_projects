@@ -46,28 +46,51 @@ var app = new Framework7({
 });
 
 const PLAYER = $$("#player")[0];
-const gameScreen= $$("#app")[0];
+const gameScreen = $$("#gameScreen")[0];
+let x;
+let y;
 
-document.addEventListener('touchstart', function(e) {
-  // touch coördinaten ophalen
+gameScreen.addEventListener('touchstart', function (e) {
+  // get touch coordinates
+  let touchX = e.touches[0].clientX;
+  let touchY = e.touches[0].clientY;
 
- let touchX = e.touches[0].clientX;
- let touchY = e.touches[0].clientY;
- let x = (100 * touchX / screen.width ) -5;
- let y = (100 * touchY / screen.height) -4;
- 
- 
- // if player goes to far left
- if ( x < -0.1 ) {
-  x = -0.1
-}
 
-// if player goes to far right
- if ( x > 88.42 ) {
-  x = 88.42
-}
 
-// if player goes too far down
+  // calculate touch coordinates 
+  if (gameScreen.offsetWidth > 790 && gameScreen.offsetHeight > 1000) {
+
+    x = (100 * touchX / gameScreen.offsetWidth) - 18;
+    y = (100 * touchY / gameScreen.offsetHeight) - 4;
+
+  } else {
+    if (gameScreen.offsetWidth > 700 && gameScreen.offsetHeight > 800) {
+
+      x = (100 * touchX / gameScreen.offsetWidth) - 3;
+      y = (100 * touchY / gameScreen.offsetHeight) - 4;
+
+    } else {
+
+      x = (100 * touchX / gameScreen.offsetWidth) - 5;
+      y = (100 * touchY / gameScreen.offsetHeight) - 4;
+
+    }
+  }
+
+
+
+
+  // if player goes to far left
+  if (x < -0.1) {
+    x = -0.1
+  }
+
+  // if player goes to far right
+  if (x > 88.42) {
+    x = 88.42
+  }
+
+  // if player goes too far down
   if (y > 93.08) {
     y = 93.08
   }
@@ -77,8 +100,9 @@ document.addEventListener('touchstart', function(e) {
     y = 5
   }
 
+  // set the coordinates
   PLAYER.style.left = x + '%';
   PLAYER.style.top = y + '%';
 
- console.log( PLAYER.style.left, PLAYER.style.top)
+  console.log(PLAYER.style.left, PLAYER.style.top)
 });
