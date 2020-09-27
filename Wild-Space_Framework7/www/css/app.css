@@ -17,8 +17,8 @@
 
 
   background-image: url("../assets/spaceship-pixel-art-maker-340915.png");
-  height: 4em;
-  width: 3em;
+  height: 3.5em;
+  width: 2.5em;
   background-color: white;
   position: absolute;  
 	top: 80%;
@@ -74,12 +74,12 @@ body {
 	border: solid 1px white;
 }
 
-#hinder_2 {
+#hinder2 {
 	right: 0vw;
 	
 }
 
-#hinder_1 {
+#hinder1 {
 	left: 0vw;
 	
 }
@@ -88,7 +88,7 @@ body {
 
 /* responsive: change properties when screensize changes */
 
-@media screen and (min-width: 1000px) and (min-height: 1000px) {
+@media screen and (min-width: 790px) and (min-height: 1000px) {
   
   #app {
 
