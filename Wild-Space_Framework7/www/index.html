@@ -36,14 +36,38 @@
     <div class="view view-main view-init safe-areas">
       <div class="page" id="gameScreen" data-name="home">
         <div class="header">
-          <div class="headerL">Score</div>
-          <div class="headerM">GameNotifs</div>
-          <div class="headerR">Highscore</div>
+
+          <p class="headerL">Score: <strong id="headerScore">0</strong>
+          </p>
+          <p class="headerM">GameNotifs</p>
+          <p class="headerR">Highscore: <strong id="headerHScore">0</strong>
+          </p>
+
         </div>
+
         <div id="hinder1" class="hinder"></div>
         <div id="hinder2" class="hinder"></div>
 
-        <div id="player" class="player"></div> 
+        <button class="btnRestart" id="btnRestart">Restart</button>
+        <button class="btnMenu" id="btnMenu">Menu</button>
+
+        <div id="player" class="player"></div>
+
+      </div>
+    </div>
+
+    <div class="popup popup-push popup-tablet-fullscreen" id="popup">
+      <div class="block">
+        <p class="popupTitle">Wild Space </p>
+
+        <button class="btnStart" id="btnStart">Start</button>
+        <button class="btnHowTo" id="btnHowTo">How to play</button>
+
+        <p id="howToText">
+          HOW TO PLAY: </br>
+          Desktop: use the arrow keys to move around </br>
+          Mobile: touch to move around
+        </p>
 
       </div>
     </div>

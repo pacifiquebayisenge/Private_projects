@@ -13,6 +13,11 @@
 
 /* Your app custom styles here */
 
+@font-face {
+  font-family: retroGameFont;
+  src: url(../fonts/Retro\ Gaming.ttf);
+}
+
 .player {
 
 
@@ -20,68 +25,188 @@
   height: 3.5em;
   width: 2.5em;
   background-color: white;
-  position: absolute;  
-	top: 80%;
-  left: 50%;   
+  position: absolute;
+  top: 80%;
+  left: 50%;
   background-size: contain;
   background-repeat: no-repeat;
 
 }
 
 .header {
-
+  font-family: retroGameFont;
   width: 100%;
   display: flex;
+  position: absolute;
+
+  
 }
 
 .headerL {
-  width: 30%;
-  margin-left: 5%;
+  float: left;
+	width: 33%;
+  
+  margin-left: 1em;
+  
 
+}
+
+#headerScore {
+  margin: 0em 0.5em;
+  width: fit-content;
 }
 
 .headerM {
-  width: 30%;
-  text-align: center;
-
+  float: left;
+	width: 33%;
+	text-align: center;
 }
 
 .headerR {
-  text-align: right;
-  width: 30%;
-  margin-right: 5%;
+  
+  float: right;
+	text-align: right;
+  width: 33%;
+  margin-right: 1em;
+  
+
+}
+
+#headerHScore {
+  text-align: left;  
+  width: fit-content;
+  margin: 0em 0.5em;
 }
 
 body {
   background-color: black;
 }
-.page, #app {
+
+.page,
+#app {
   background-image: url("../assets/Stars.png");
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   margin: 0em;
   padding: 0em;
 }
 
 .hinder {
-	position: absolute;
-	top: 6%;
-	height: 4vw;
-	width: 30vw;
-	background-size: contain;
-	background-color: none;
-	border: solid 1px white;
+  position: absolute;
+  top: 6%;
+  height: 4vw;
+  width: 30vw;
+  background-size: contain;
+  background-color: none;
+  border: solid 1px white;
 }
 
 #hinder2 {
-	right: 0vw;
-	
+  right: 0vw;
+
 }
 
 #hinder1 {
-	left: 0vw;
-	
+  left: 0vw;
+
+}
+
+button {
+  background-color: rgba(100, 98, 100, 1);
+  width: 50vw;
+  border-radius: 12px;
+  font-size: 2em;
+  text-decoration: none;
+  border: none;
+  font-family: retroGameFont;
+  cursor: pointer;
+  color: red;
+  height: 2em;
+  visibility: visible;
+  position: absolute;
+}
+
+button:hover {
+  background-color: rgba(100, 98, 100, 0.77);
+}
+
+.btnStart {
+
+  top: 380%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -200%);
+  transform: translate(-50%, 200%);
+}
+
+.btnHowTo {
+
+  min-width: fit-content;
+  top: 400%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -400%);
+  transform: translate(-50%, 400%);
+}
+
+.btnRestart {
+
+  display: none;
+  top: 45%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -45%);
+  transform: translate(-50%, -45%);
+
+}
+
+.btnMenu {
+
+  display: none;
+  top: 58%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -55%);
+  transform: translate(-50%, -58%);
+
+}
+
+#howToText {
+  padding: 0vw 2vw;
+  display: none;
+  bottom: 1%;
+  position: absolute;
+  font-size: 5vw;
+  color: white;
+}
+
+p {
+  color: aliceblue;
+  font-family: retroGameFont;
+  margin: 0vw;
+  height: 10%;
+  font-size: 3vw;
+}
+
+.popupTitle {
+
+  text-align: center;
+  font-size: 10vw;
+}
+
+#popup {
+
+  background-image: url("../assets/Stars.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin: 0em;
+  padding: 0em;
 }
 
 
@@ -89,7 +214,7 @@ body {
 /* responsive: change properties when screensize changes */
 
 @media screen and (min-width: 790px) and (min-height: 1000px) {
-  
+
   #app {
 
     width: 800px;
@@ -100,24 +225,23 @@ body {
   }
 
   .spaceShip {
-		height: 10vw;
-		width: 10vw;
-		position: absolute;
-		top: 80%;
-	}
-
-	.hinder {
-    height: 2vw;
-    width: 10vw;;
+    height: 10vw;
+    width: 10vw;
+    position: absolute;
+    top: 80%;
   }
-  
+
+  .hinder {
+    height: 2vw;
+    width: 10vw;
+    ;
+  }
+
   #player {
-		width: 4em;
+    width: 4em;
     height: 5em;
-		position: absolute;
-		top: 80%;
-	}
+    position: absolute;
+    top: 80%;
+  }
 
 }
-
-

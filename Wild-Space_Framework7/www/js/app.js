@@ -104,18 +104,21 @@ gameScreen.on('touchstart', function (e) {
   PLAYER.style.top = y + '%';
 
   console.log(PLAYER.style.left, PLAYER.style.top)
+  collision();
 });
 
-let hoogte = 5;
+let height = 5;
 let hinder1 = $$("#hinder1")[0];
 let hinder2 = $$("#hinder2")[0];
 let animation;
+let headerScore = $$("#headerScore")[0];
 let score = 0;
+let speedInt;
 
-//	Hoe hoger de score wordt, hoe sneller de hindernissen zich naar benenden verplaatsen.
+//	bars move faster down when score increases
 let speedUp = function () {
 
-  let speedInt;
+
 
   switch (true) {
 
@@ -123,80 +126,191 @@ let speedUp = function () {
       speedInt = 0.5;
       break;
 
-    case (score >= 3):
+    case (score < 14):
       speedInt = 0.7;
       break;
 
-    case (score >= 15):
+    case (score < 34):
       speedInt = 0.9;
       break;
 
-    case (score >= 35):
-      speedInt++
+    case (score < 49):
+      speedInt = 1
       break;
 
-    case (score >= 50):
+    case (score < 74):
       speedInt = 1.3;
       break;
 
-    case (score >= 75):
+    case (score < 99):
       speedInt = 1.6;
       break;
 
-    case (score >= 100):
+    case (score < 124):
       speedInt = 1.8;
       break;
 
-    case (score >= 125):
+    case (score < 149):
       speedInt = 2;
       break;
 
-    case (score >= 150):
+    case (score > 150):
       speedInt = 2.5;
       break;
 
 
   }
 
-  hoogte += speedInt;
+  // speed of the bars down movement added by speedInt
+  // to declare how fast thet come down
+  height += speedInt;
 
-   
+
 }
+
+
+// collision between the bars and the player
+let collision = function () {
+  if (
+    hinder2.getBoundingClientRect().bottom > PLAYER.getBoundingClientRect().top &&
+    hinder2.getBoundingClientRect().bottom < PLAYER.getBoundingClientRect().bottom
+  ) {
+    if (hinder1.getBoundingClientRect().right > PLAYER.getBoundingClientRect().left + 6) {
+
+      cancelAnimationFrame(animation);
+      // updateHighscore();
+      // btnStart.innerHTML = 'Restart';
+      // btnStart.style.display = 'block';
+      score = 0;
+      gameOver = true;
+      gameOverMenu();
+
+    }
+
+    if (hinder2.getBoundingClientRect().left < PLAYER.getBoundingClientRect().right - 12) {
+
+      cancelAnimationFrame(animation);
+      // updateHighscore();
+      // btnStart.innerHTML = 'Restart';
+      // btnStart.style.display = 'block';
+      score = 0;
+      gameOver = true;
+      gameOverMenu();
+
+    }
+  }
+
+};
+
+
 
 let frame = function () {
   animation = requestAnimationFrame(frame);
 
-  if (hoogte > 100) {
-    /* 
-              We willen een randam getal berekennen van tussen 0 en 80.
-              Met de  Math.random bekomen we een getal tussen 0 en 1 met 0 inbegrepen maar 1 niet.
-              Door te vermenigvuldigen met 80 bekomen we een getal tussen 0 en 80 met alle getallen inbegrepen tot 80 dwz 80 niet.
-              Met de Math.floor ronden we dit getal af naar beneden om een geheel getal te bekomen.
-           */
-    randomGetal = Math.floor(Math.random() * 75);
+  if (height > 100) {
 
-    hinder1.style.width = randomGetal + '%';
-    hinder2.style.width = 75 - randomGetal + '%';
+    // random number 
+    randomNum = Math.floor(Math.random() * 75);
+
+    hinder1.style.width = randomNum + '%';
+    hinder2.style.width = 75 - randomNum + '%';
 
     /*
-            Wanneer de hindernissen  het einde van het scherm bereiken, plaatsen we ze terug bij het begin.
-              En wordt de score met 1 bijgeteld.
-          */
-    hoogte = 5;
-    
+     when the bars reach the end of the screen 
+     place them back on top with new with measurements 
+     add score by one
+     */
+    height = 5;
+
     score++;
-    //document.getElementById('score').innerHTML = score;
+    headerScore.innerHTML = score;
+
+    console.log(speedInt);
+
   } else {
     speedUp();
 
-    //	De verticale positie van de hindernissen steeds met 1 vermeerderen om ze naar beneden te doen bewegen.
-   
-    $$('.hinder').css('top', hoogte + '%');
+    //	change height of bars to let them come down
+
+    $$('.hinder').css('top', height + '%');
 
   }
 
-  //collision();
+  collision();
   //arrowMovement();
 };
 
-frame();
+
+//  Game start
+
+let btnStart = $$('#btnStart');
+let gameStarted = false;
+
+btnStart.on('click', function () {
+
+  headerScore.innerHTML = score;
+
+  gameStarted = true;
+
+  gameOnGoing();
+
+
+  frame();
+});
+
+let gameOnGoing = function () {
+
+  if (gameStarted == true) {
+
+    app.popup.close('#popup');
+
+  } else {
+
+    app.popup.open('#popup');
+
+  }
+};
+
+gameOnGoing();
+
+// game instructions 
+
+let btnHowTo = $$('#btnHowTo');
+let howToTxt = $$('#howToText');
+
+
+btnHowTo.on('click', function () {
+
+  btnHowTo.css('display', 'none');
+  howToTxt.css('display', 'block');
+
+  setTimeout(function () {
+
+    btnHowTo.css('display', 'block');
+    howToTxt.css('display', 'none');
+
+  }, 3000);
+});
+
+
+// game over 
+
+let gameOver = false;
+let btnRestart = $$('#btnRestart');
+let btnMenu = $$('#btnMenu');
+
+let gameOverMenu = function () {
+
+  if (gameOver = true) {
+    btnRestart.css('display', 'block');
+    btnMenu.css('display', 'block');
+
+  } else {
+
+    btnRestart.css('display', 'none');
+    btnMenu.css('display', 'none');
+  }
+
+
+
+}
