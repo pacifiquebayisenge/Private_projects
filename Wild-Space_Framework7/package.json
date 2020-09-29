@@ -9,6 +9,7 @@
     "start": "npm run serve",
     "serve": "http-server ./www/ -o -c 1 -a localhost -p 8080",
     "build-cordova": "node ./build/build.js && cd cordova && cordova build",
+    "build-run-cordova": "node ./build/build.js && cd cordova && cordova run",
     "build-cordova-ios": "node ./build/build.js && cd cordova && cordova build ios",
     "build-cordova-android": "node ./build/build.js && cd cordova && cordova build android",
     "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./www/fonts/"
