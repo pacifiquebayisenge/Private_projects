@@ -10,10 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReminderComponent } from './dialog/reminder.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    ReminderComponent
+
 
   ],
   imports: [
@@ -23,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
 
   ],
   providers: [],

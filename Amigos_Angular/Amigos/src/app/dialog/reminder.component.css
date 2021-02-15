@@ -1,0 +1,80 @@
+::ng-deep .mat-dialog-container {
+  background: #350141;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+}
+
+
+
+
+
+
+button {
+  background-color: darkorange;
+
+}
+
+.title,
+.title2 {
+  margin: 1rem;
+
+  font-size: 3em;
+  font-family: 'Roboto';
+  font-weight: bolder;
+  text-shadow:
+    1px -0.5px 1px #37a6b7,
+    1.5px -1px 1px #37a6b7,
+    2px -1.5px 1px #37a6b7,
+    2.5px -2px 1px #37a6b7,
+    3px -2.5px 1px #37a6b7,
+    3.5px -3px 1px #37a6b7,
+    4px -3.5px 1px #37a6b7,
+    4.5px -4px 1px #37a6b7,
+    5px -4.5px 1px #37a6b7,
+    5.5px -5px 1px #37a6b7;
+
+
+  color: #4fe5f3;
+}
+
+.title2 {
+
+  text-shadow:
+    1px -0.5px 1px #b63784,
+    1.5px -1px 1px #b63784,
+    2px -1.5px 1px #b63784,
+    2.5px -2px 1px #b63784,
+    3px -2.5px 1px #b63784,
+    3.5px -3px 1px #b63784,
+    4px -3.5px 1px #b63784,
+    4.5px -4px 1px #b63784,
+    5px -4.5px 1px #b63784,
+    5.5px -5px 1px #b63784;
+
+
+  color: #f24fe6;
+}
+
+.text {
+  margin: 1rem;
+}
+
+.txtbx {
+  width: 80%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+}

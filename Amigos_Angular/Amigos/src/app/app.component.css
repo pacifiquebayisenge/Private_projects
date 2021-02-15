@@ -1,12 +1,103 @@
+.dark-theme-mode.mat-app-background {
+  background-color: #1f0029;
+  color: white;
+}
+
 .content {
+  align-items: center;
   text-align: center;
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #350141;
+  color: white;
 }
 
 
-/* Responsive Styles */
-@media screen and (max-width: 767px) {}
+.title,
+.title2 {
+  margin: 1rem;
+  font-size: 6rem;
+  font-family: 'Roboto';
+  font-weight: bolder;
+  text-shadow:
+    1px -0.5px 1px #37a6b7,
+    1.5px -1px 1px #37a6b7,
+    2px -1.5px 1px #37a6b7,
+    2.5px -2px 1px #37a6b7,
+    3px -2.5px 1px #37a6b7,
+    3.5px -3px 1px #37a6b7,
+    4px -3.5px 1px #37a6b7,
+    4.5px -4px 1px #37a6b7,
+    5px -4.5px 1px #37a6b7,
+    5.5px -5px 1px #37a6b7;
 
-@media screen and (max-width: 575px) {}
+
+  color: #4fe5f3;
+}
+
+.title2 {
+
+  text-shadow:
+    1px -0.5px 1px #b63784,
+    1.5px -1px 1px #b63784,
+    2px -1.5px 1px #b63784,
+    2.5px -2px 1px #b63784,
+    3px -2.5px 1px #b63784,
+    3.5px -3px 1px #b63784,
+    4px -3.5px 1px #b63784,
+    4.5px -4px 1px #b63784,
+    5px -4.5px 1px #b63784,
+    5.5px -5px 1px #b63784;
+
+
+  color: #f24fe6;
+}
+
+button {
+  margin: 3rem;
+  width: 20%;
+  height: 10%;
+  font-size: 2rem;
+}
+
+.reminder {
+  width: 50%;
+}
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+
+  .title,
+  .title2 {
+    font-size: 3rem;
+  }
+
+  button {
+    margin: 3rem;
+    width: 30%;
+    height: 10%;
+    font-size: 1.5rem;
+    color: white;
+
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 501px) {
+
+  .title,
+  .title2 {
+    font-size: 5rem;
+  }
+
+  button {
+    margin: 3rem;
+    width: 25%;
+    height: 8%;
+    font-size: 1.5rem;
+
+  }
+}
