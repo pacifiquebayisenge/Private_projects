@@ -1,0 +1,22 @@
+<div class="content mat-app-background" role="main" [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
+
+
+
+
+  <span [ngClass]="{'title': !this.gloVarService.isDarkTheme, 'title2' : this.gloVarService.isDarkTheme}">{{ title }}
+  </span>
+  <!-- <span class="title2">{{ title }} </span>-->
+
+  <p>Drinks are best when mixed with friends!</p>
+
+  <app-card></app-card>
+
+  <button mat-raised-button color=primary (click)="openDialog()">START</button>
+  <div>
+    <mat-slide-toggle color="primary" [(ngModel)]=this.gloVarService.isDarkTheme>dark mode</mat-slide-toggle>
+  </div>
+
+
+
+
+</div>

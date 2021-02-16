@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GloVarService } from '../services/glo-var.service';
 
 @Component({
     selector: 'app-root',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
 
 })
 export class ReminderComponent {
+
+    constructor(
+        public gloVarService: GloVarService
+    ) { }
 
 }

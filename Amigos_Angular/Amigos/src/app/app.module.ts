@@ -11,12 +11,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ReminderComponent } from './dialog/reminder.component'
+import { ReminderComponent } from './dialog/reminder.component';
+import { HomeComponent } from './pages/home/home.component'
+
+import { GameComponent } from './pages/game/game.component';
+import { CardComponent } from './pages/game/components/card/card.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReminderComponent
+    ReminderComponent,
+    HomeComponent,
+    GameComponent,
+    CardComponent
 
 
   ],
@@ -28,7 +36,8 @@ import { ReminderComponent } from './dialog/reminder.component'
     MatButtonModule,
     MatSlideToggleModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
 
   ],
   providers: [],
