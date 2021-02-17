@@ -13,8 +13,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: max-content;
+  min-width: 100%;
   background-image: linear-gradient(to top, #3f3f50, #383847, #31313f, #2b2b36, #24242e);
   color: white;
+  top: 0;
+  bottom: 0;
+
 }
 
 
@@ -60,13 +65,77 @@
 
 button {
   margin: 3rem;
-  width: 20%;
-  height: 10%;
-  font-size: 2rem;
+  text-align: center;
+  width: fit-content;
+  font-size: x-large;
+  padding: 1rem 2rem;
+}
+
+.toggle-container {
+  margin: 1em;
 }
 
 .reminder {
   width: 50%;
+}
+
+.card-container {
+  position: relative;
+  height: 35em;
+  width: 30em;
+  margin: 5em;
+}
+
+app-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px 0 #00000040, 0 15px 20px 0 #00000020 !important;
+  box-shadow: 8px -6px 20px black !important;
+  transition: transform 300ms;
+
+}
+
+app-card:nth-last-child(1) {
+  --y: calc(-50% + 20px);
+  transform: translate(-50%, var(--y)) scale(1.05);
+}
+
+app-card:nth-last-child(2) {
+  --y: calc(-50%);
+  transform: translate(-50%, var(--y)) scale(1);
+
+}
+
+app-card:nth-last-child(3) {
+  --y: calc(-50% - 20px);
+  transform: translate(-50%, var(--y)) scale(.95);
+
+}
+
+app-card:nth-last-child(n+4) {
+  --y: calc(-50% - 40px);
+  transform: translate(-50%, var(--y)) scale(.9);
+  box-shadow: 0 0 1px 1px #00000003;
+
+}
+
+
+
+@keyframes swap {
+  40% {
+    transform: scale3d(1.475, 1.475, 1.475) translate3d(22px, 0, 0);
+    opacity: 1
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: scale(1.1) translate3d(300px, 0, 0);
+    opacity: 0
+  }
+
+
 }
 
 
@@ -81,12 +150,16 @@ button {
   }
 
   button {
-    margin: 3rem;
-    width: 30%;
-    height: 10%;
-    font-size: 1.5rem;
-    color: white;
 
+    font-size: large;
+
+  }
+
+  .card-container {
+    position: relative;
+    height: 20em;
+    width: 15em;
+    margin: 5em;
   }
 }
 
@@ -97,11 +170,13 @@ button {
     font-size: 5rem;
   }
 
-  button {
-    margin: 3rem;
-    width: 25%;
-    height: 8%;
-    font-size: 1.5rem;
-
+  .card-container {
+    position: relative;
+    height: 30em;
+    width: 25em;
+    margin: 5em;
   }
+
+
+
 }

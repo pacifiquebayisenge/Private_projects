@@ -1,3 +1,52 @@
 .card-dark-theme {
   background-image: linear-gradient(to top, #37a6b7, #9061b7, #b63784);
 }
+
+mat-card {
+
+  height: 35em;
+  width: 30em;
+
+  padding: 1.5rem;
+}
+
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+
+  .title,
+  .title2 {
+    font-size: 3rem;
+  }
+
+  button {
+
+    font-size: large;
+
+  }
+
+  mat-card {
+
+    height: 20em;
+    width: 15em;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 501px) {
+
+  .title,
+  .title2 {
+    font-size: 5rem;
+  }
+
+  mat-card {
+
+    height: 30em;
+    width: 25em;
+  }
+
+
+}

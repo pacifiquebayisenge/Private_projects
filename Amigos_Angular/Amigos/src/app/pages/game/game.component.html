@@ -7,12 +7,16 @@
   </span>
   <!-- <span class="title2">{{ title }} </span>-->
 
-  <p>Drinks are best when mixed with friends!</p>
+  <div class="card-container">
+    <app-card *ngFor="let i of cc" [text]="i" (click)="tap($event.currentTarget)"></app-card>
 
-  <app-card></app-card>
+  </div>
+
+
+
 
   <button mat-raised-button color=primary (click)="openDialog()">START</button>
-  <div>
+  <div class="toggle-container">
     <mat-slide-toggle color="primary" [(ngModel)]=this.gloVarService.isDarkTheme>dark mode</mat-slide-toggle>
   </div>
 

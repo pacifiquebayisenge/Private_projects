@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { trigger, keyframes, animate, transition } from '@angular/animations';
 import * as kf from './keyframes';
@@ -7,14 +7,11 @@ import * as kf from './keyframes';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
-  animations: [
-    trigger('cardAnimator', [
-      transition('* => rotateOutUpRight', animate(500, keyframes(kf.rotateOutUpRight))),
-    ])
-  ]
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
+
+  @Input() text: string
 
   constructor() { }
 
