@@ -1,25 +1,104 @@
-.card-dark-theme {
-  background-image: linear-gradient(to top, #37a6b7, #9061b7, #b63784);
+::ng-deep .dark-theme-mode .mat-card {
+  background: #424242;
+  color: #ffffff90;
+
+
+
 }
 
 mat-card {
 
   height: 35em;
   width: 30em;
-
   padding: 1.5rem;
+  color: #00000080;
 }
 
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+p {
+
+
+  font-size: large;
+  font-family: sans-serif;
+  font-weight: 900;
+
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: fit-content;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+}
+
+span {
+
+
+  margin: 0em 0em 0em 0em !important;
+
+  width: fit-content;
+  opacity: 0.5;
+}
+
+.text {
+
+  height: 100%;
+
+}
+
+.cardTitle,
+.cardTitle2 {
+  margin: 1rem;
+  font-size: 3rem;
+  font-family: 'Roboto';
+  font-weight: bolder;
+  text-shadow:
+    1px -0.5px 1px #37a6b7,
+    1.5px -1px 1px #37a6b7,
+    2px -1.5px 1px #37a6b7,
+    2.5px -2px 1px #37a6b7,
+    3px -2.5px 1px #37a6b7,
+    3.5px -3px 1px #37a6b7,
+    4px -3.5px 1px #37a6b7,
+    4.5px -4px 1px #37a6b7,
+    5px -4.5px 1px #37a6b7,
+    5.5px -5px 1px #37a6b7;
+
+
+  color: #4fe5f3;
+}
+
+.cardTitle2 {
+
+  text-shadow:
+    1px -0.5px 1px #b63784,
+    1.5px -1px 1px #b63784,
+    2px -1.5px 1px #b63784,
+    2.5px -2px 1px #b63784,
+    3px -2.5px 1px #b63784,
+    3.5px -3px 1px #b63784,
+    4px -3.5px 1px #b63784,
+    4.5px -4px 1px #b63784,
+    5px -4.5px 1px #b63784,
+    5.5px -5px 1px #b63784;
+
+
+  color: #f24fe6;
+}
 
 
 
 /* Responsive Styles */
 @media screen and (max-width: 500px) {
 
-  .title,
-  .title2 {
-    font-size: 3rem;
+  .cardTitle,
+  .cardTitle2 {
+    font-size: 2rem;
   }
 
   button {
@@ -37,15 +116,55 @@ mat-card {
 
 @media screen and (max-width: 1440px) and (min-width: 501px) {
 
-  .title,
-  .title2 {
-    font-size: 5rem;
+  .cardTitle,
+  .cardTitle2 {
+    font-size: 3rem;
   }
 
   mat-card {
 
     height: 30em;
     width: 25em;
+  }
+
+  p {
+    font-size: 1.8em;
+
+  }
+
+
+}
+
+
+
+@media screen and (max-width: 2000px) and (min-width: 1441px) {
+
+  .cardTitle,
+  .cardTitle2 {
+    font-size: 3rem;
+  }
+
+  mat-card {
+
+    height: 25em;
+    width: 20em;
+  }
+
+  p {
+    font-size: 1.5em;
+    margin: 2em 0em;
+  }
+
+
+}
+
+@media screen and (max-width: 2561px) and (min-width: 2001px) {
+
+
+
+  p {
+    font-size: 2em;
+    margin: 3em 0em;
   }
 
 

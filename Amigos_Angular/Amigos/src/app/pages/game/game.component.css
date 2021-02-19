@@ -7,6 +7,11 @@
   color: white;
 }
 
+::ng-deep .mat-card:not([class*=mat-elevation-z]),
+::ng-deep .dark-theme-mode .mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
 .content {
   align-items: center;
   text-align: center;
@@ -19,6 +24,7 @@
   color: white;
   top: 0;
   bottom: 0;
+
 
 }
 
@@ -97,7 +103,41 @@ app-card {
 
 }
 
-app-card:nth-last-child(1) {
+.border,
+.dark-border {
+
+
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(to right, #fff 20%, #fff 40%, #4FE5F3 50%, #4FE5F3 55%, #fff 70%, #fff 100%);
+  background-size: 200% auto;
+  padding: 1%;
+  transition: 300ms;
+
+  animation: shine 4s linear infinite;
+}
+
+.dark-border {
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(to right, #424242 20%, #424242 40%, #f24fe6 50%, #f24fe6 55%, #424242 70%, #424242 100%);
+  background-size: 200% auto;
+  padding: 1%;
+  transition: 300ms;
+
+  animation: shine 4s linear infinite;
+
+}
+
+/*Begin shimmer code*/
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+fff app-card:nth-last-child(1) {
   --y: calc(-50% + 20px);
   transform: translate(-50%, var(--y)) scale(1.05);
 }
@@ -132,7 +172,7 @@ app-card:nth-last-child(n+4) {
   100% {
     -webkit-transform: rotate3d(0, 0, 1, 90deg);
     transform: scale(1.1) translate3d(300px, 0, 0);
-    opacity: 0
+    opacity: 0;
   }
 
 
@@ -177,6 +217,20 @@ app-card:nth-last-child(n+4) {
     margin: 5em;
   }
 
+}
 
+@media screen and (max-width: 2000px) and (min-width: 1441px) {
+
+  .title,
+  .title2 {
+    font-size: 5rem;
+  }
+
+  .card-container {
+    position: relative;
+    height: 30em;
+    width: 25em;
+    margin: 2em;
+  }
 
 }

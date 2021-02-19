@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { trigger, keyframes, animate, transition } from '@angular/animations';
 import * as kf from './keyframes';
+import { GloVarService } from 'src/app/services/glo-var.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class CardComponent implements OnInit {
 
   @Input() text: string
 
-  constructor() { }
+  constructor(public gloVarService: GloVarService) { }
 
   ngOnInit(): void {
   }
