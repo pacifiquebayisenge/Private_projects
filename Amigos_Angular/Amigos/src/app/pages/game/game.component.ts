@@ -22,6 +22,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   title = 'Game';
   cardTxt: string;
+  cardElem: Array<any>
 
   openDialog() {
 
@@ -43,6 +44,13 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
+    for (let i: number = this.texts.text.length - 1; i > -1; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = this.texts.text[i];
+      this.texts.text[i] = this.texts.text[j]
+      this.texts.text[j] = temp;
+    }
+
     this.cc.reverse();
 
     console.log(this.texts.text)
@@ -55,17 +63,20 @@ export class GameComponent implements OnInit, AfterViewInit {
   }
 
   tap(elem: any) {
-    this.cardTxt = elem.id;
 
-    console.log(this.cardTxt)
+    this.cardTxt = elem.id;
+    this.cardElem = this.texts.text[this.texts.text.length - 1]
+
+
+    console.log(this.texts.text[this.texts.text.length - 1])
     this.removeBorderAni();
     elem.style.animation = 'swap 700ms';
 
 
     setTimeout(() => {
       elem.style.animation = '';
-      this.texts.text.splice(this.texts.text.indexOf(this.cardTxt), 1)
-      this.texts.text.unshift(this.cardTxt)
+      this.texts.text.pop()
+      this.texts.text.unshift(this.cardElem)
       setTimeout(() => {
         this.addBorderAni();
         this.removeAllBorder();

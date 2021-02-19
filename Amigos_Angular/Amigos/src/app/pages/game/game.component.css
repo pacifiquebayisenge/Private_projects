@@ -97,8 +97,7 @@ app-card {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 5px 10px 0 #00000040, 0 15px 20px 0 #00000020 !important;
-  box-shadow: 8px -6px 20px black !important;
+
   transition: transform 300ms;
 
 }
@@ -140,24 +139,27 @@ app-card {
 fff app-card:nth-last-child(1) {
   --y: calc(-50% + 20px);
   transform: translate(-50%, var(--y)) scale(1.05);
+  box-shadow: 5px 0px 9px 8px rgb(0 0 0 / 50%);
 }
 
 app-card:nth-last-child(2) {
   --y: calc(-50%);
   transform: translate(-50%, var(--y)) scale(1);
+  box-shadow: 5px 0px 9px 8px rgb(0 0 0 / 50%);
 
 }
 
 app-card:nth-last-child(3) {
   --y: calc(-50% - 20px);
   transform: translate(-50%, var(--y)) scale(.95);
+  box-shadow: 5px 0px 9px 8px rgb(0 0 0 / 50%);
 
 }
 
 app-card:nth-last-child(n+4) {
   --y: calc(-50% - 40px);
   transform: translate(-50%, var(--y)) scale(.9);
-  box-shadow: 0 0 1px 1px #00000003;
+
 
 }
 
