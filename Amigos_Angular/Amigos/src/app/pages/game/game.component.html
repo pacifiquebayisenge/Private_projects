@@ -1,12 +1,5 @@
 <div class="content mat-app-background" role="main" [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
 
-
-
-
-  <span [ngClass]="{'title': !this.gloVarService.isDarkTheme, 'title2' : this.gloVarService.isDarkTheme}">{{ title }}
-  </span>
-  <!-- <span class="title2">{{ title }} </span>-->
-
   <div #stack class="card-container">
     <app-card [ngClass]="{'border': !this.gloVarService.isDarkTheme, 'dark-border' : this.gloVarService.isDarkTheme}"
       *ngFor="let i of this.texts.text" [text]="i.t" [id]="i.id" (click)="tap($event.currentTarget)">
@@ -14,15 +7,6 @@
 
   </div>
 
-
-
-
-  <button mat-raised-button color=primary (click)="openDialog()">START</button>
-  <div class="toggle-container">
-    <mat-slide-toggle color="primary" [(ngModel)]=this.gloVarService.isDarkTheme>dark mode</mat-slide-toggle>
-  </div>
-
-
-
+  <button mat-raised-button color=primary routerLink="/">End</button>
 
 </div>

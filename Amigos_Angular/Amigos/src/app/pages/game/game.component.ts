@@ -51,10 +51,18 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.texts.text[j] = temp;
     }
 
-    this.cc.reverse();
 
-    console.log(this.texts.text)
 
+
+  }
+
+  darkmode() {
+    document.querySelector('body').style.backgroundImage = ""
+    if (!this.gloVarService.isDarkTheme) {
+      document.querySelector('body').style.backgroundColor = "rgb(53, 1, 65)"
+    } else {
+      document.querySelector('body').style.backgroundColor = "#3f3f50"
+    }
   }
 
   ngAfterViewInit() {

@@ -7,6 +7,10 @@
   color: white;
 }
 
+::ng-deep .mat-app-background {
+  background-color: unset;
+}
+
 .content {
   align-items: center;
   text-align: center;
