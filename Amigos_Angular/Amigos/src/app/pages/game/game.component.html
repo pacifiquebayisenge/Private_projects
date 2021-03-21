@@ -2,7 +2,7 @@
 
   <div #stack class="card-container">
     <app-card [ngClass]="{'border': !this.gloVarService.isDarkTheme, 'dark-border' : this.gloVarService.isDarkTheme}"
-      *ngFor="let i of this.texts.text" [text]="i.t" [id]="i.id" (click)="tap($event.currentTarget)">
+      *ngFor="let i of this.txtList" [text]="i.txt" [id]="i.id" (click)="tap($event.currentTarget)">
     </app-card>
 
   </div>

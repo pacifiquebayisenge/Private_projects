@@ -3,6 +3,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ReminderComponent } from './dialog/reminder.component';
 import { GloVarService } from './services/glo-var.service'
 import { BehaviorSubject } from 'rxjs';
+import { PwaService } from './services/pwa.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -13,16 +15,20 @@ export class AppComponent implements OnInit, OnChanges {
 
 
 
-  s: string
+
 
 
   constructor(
-    public gloVarService: GloVarService
-  ) { }
+    public gloVarService: GloVarService,
+    private pwaService: PwaService,
+
+
+  ) {
+    this.pwaService.checkUpdates()
+  }
 
   ngOnInit() {
-    console.log("e")
-    this.s = "p"
+
     if (this.gloVarService.isDarkTheme) {
       document.querySelector('body').style.backgroundImage = "linear-gradient(to top, #350141, #350141)"
     }
@@ -43,7 +49,6 @@ export class AppComponent implements OnInit, OnChanges {
       }
     })
 
-    this.s = "g"
 
 
   }

@@ -4,6 +4,8 @@ import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
 import * as kf from './components/card/keyframes';
 import { TxtService } from 'src/app/services/txt.service';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-game',
@@ -15,14 +17,20 @@ export class GameComponent implements OnInit, AfterViewInit {
   constructor(
     public dialog: MatDialog,
     public gloVarService: GloVarService,
-    public texts: TxtService
+    public texts: TxtService,
+    private router: Router,
+    private db: AngularFirestore
+
   ) { }
+
+
 
   @ViewChild('stack') stack: ElementRef;
 
   title = 'Game';
   cardTxt: string;
-  cardElem: Array<any>
+  cardElem: Array<any>;
+  txtList: Array<any> = [];
 
   openDialog() {
 
@@ -35,21 +43,16 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   }
 
-
-
-
-  cc: Array<string> = ['Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. ', '2', '3', '4']
-
-
-
   ngOnInit() {
 
-    for (let i: number = this.texts.text.length - 1; i > -1; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = this.texts.text[i];
-      this.texts.text[i] = this.texts.text[j]
-      this.texts.text[j] = temp;
-    }
+    this.getTxt();
+
+
+
+    console.log(this.txtList.length)
+    console.log(this.texts.text.length)
+
+
 
 
 
@@ -72,19 +75,22 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   tap(elem: any) {
 
+
+
     this.cardTxt = elem.id;
-    this.cardElem = this.texts.text[this.texts.text.length - 1]
+    this.cardElem = this.txtList[this.txtList.length - 1]
 
 
-    console.log(this.texts.text[this.texts.text.length - 1])
+    console.log(this.txtList[this.txtList.length - 1])
     this.removeBorderAni();
     elem.style.animation = 'swap 700ms';
 
 
     setTimeout(() => {
       elem.style.animation = '';
-      this.texts.text.pop()
-      this.texts.text.unshift(this.cardElem)
+      this.txtList.pop()
+      this.checkLast()
+      //this.txtList.unshift(this.cardElem)
       setTimeout(() => {
         this.addBorderAni();
         this.removeAllBorder();
@@ -94,7 +100,13 @@ export class GameComponent implements OnInit, AfterViewInit {
 
 
 
+  }
 
+  checkLast() {
+    console.log(this.txtList.length)
+    if (this.txtList.length == 0) {
+      this.router.navigate(['/']);
+    }
   }
 
   addBorderAni() {
@@ -133,6 +145,48 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
   }
 
+  txtToDb() {
+
+    this.texts.text.forEach(item => {
+
+      // Add a new document in collection "cities"
+      this.db.collection("text").doc().set({
+        Id: item.id,
+        txt: item.t
+      })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+    })
+
+
+  }
+
+  async getTxt() {
+    await this.db.collection("text")
+      .get().toPromise()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.txtList.push(doc.data());
+        });
+        for (let i: number = this.txtList.length - 1; i > -1; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const temp = this.txtList[i];
+          this.txtList[i] = this.txtList[j]
+          this.txtList[j] = temp;
+        }
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+
+
+
+  }
 
 
 

@@ -15,3 +15,9 @@ body {
   color: white;
 
 }
+
+::ng-deep .custom-bottom-sheet {
+  color: white;
+  font-size: large;
+  background-color: #3f3f50 !important;
+}

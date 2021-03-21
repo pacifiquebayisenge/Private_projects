@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "amigos-0"
+  },
+  "targets": {
+    "amigos-0": {
+      "hosting": {
+        "Amigos": [
+          "amigos-0"
+        ]
+      }
+    }
+  }
+}

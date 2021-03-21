@@ -10,6 +10,7 @@ import { ReminderComponent } from 'src/app/dialog/reminder.component';
 })
 export class HomeComponent {
 
+
   constructor(
     public dialog: MatDialog,
     public gloVarService: GloVarService

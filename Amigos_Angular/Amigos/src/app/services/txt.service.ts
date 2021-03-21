@@ -40,7 +40,7 @@ export class TxtService {
     { id: 29, t: "Drink if you've ever been to a stripclub" },
     { id: 30, t: "Drink if you've ever been skinny dipping" },
     { id: 31, t: "Speak loud as if everyone is deaf for one entirely round. Take 2 sips each time you forget" },
-    { id: 32, t: "Pretend you are cumming, the person who acts best can give out 5 sips" },
+    { id: 32, t: "Take a sip, if you've ever kissed someone in this room" },
     { id: 33, t: "Start a facebook live session, the one with the fewest viewers take 2 sips" },
     { id: 34, t: "Call someone of your choice if they answer take 2 sips if not give out 2 sips" },
     { id: 35, t: "Ask your neighbors for condoms or take 5 sips" },
