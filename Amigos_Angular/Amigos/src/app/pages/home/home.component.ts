@@ -2,21 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
+import { PwaService } from 'src/app/services/pwa.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
 
   constructor(
     public dialog: MatDialog,
-    public gloVarService: GloVarService
+    public gloVarService: GloVarService,
+    private db: AngularFirestore,
+    private pwaService: PwaService
   ) { }
 
   title = 'A M I G O S';
+
+  ngOnInit() {
+    this.getTxt();
+
+  }
 
   openDialog() {
 
@@ -36,6 +46,37 @@ export class HomeComponent {
     } else {
       document.querySelector('body').style.backgroundColor = "#3f3f50"
     }
+  }
+
+  async getTxt() {
+
+
+
+
+
+
+
+    this.gloVarService.txtList = []
+
+
+    let dbb = firebase.default.firestore()
+
+    dbb.collection("text")
+      .onSnapshot({ includeMetadataChanges: true }, (snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+
+            this.gloVarService.txtList.push(change.doc.data());
+          }
+
+          var source = snapshot.metadata.fromCache ? "local cache" : "server";
+          console.log("Data came from " + source);
+          console.log(snapshot);
+        });
+      });
+
+
+
   }
 
 

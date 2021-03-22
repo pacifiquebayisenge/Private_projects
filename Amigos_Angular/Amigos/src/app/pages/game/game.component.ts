@@ -31,6 +31,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   cardTxt: string;
   cardElem: Array<any>;
   txtList: Array<any> = [];
+  tapCount: number = 25;
 
   openDialog() {
 
@@ -45,7 +46,16 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    this.getTxt();
+    this.txtList = this.gloVarService.txtList
+
+    for (let i: number = this.txtList.length - 1; i > -1; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = this.txtList[i];
+      this.txtList[i] = this.txtList[j]
+      this.txtList[j] = temp;
+    }
+
+    if (this.txtList.length == 0) this.router.navigate(['/']);
 
 
 
@@ -98,7 +108,8 @@ export class GameComponent implements OnInit, AfterViewInit {
 
     }, 700);
 
-
+    if (this.tapCount == 0) this.router.navigate(['/']);
+    this.tapCount--
 
   }
 
@@ -165,28 +176,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   }
 
-  async getTxt() {
-    await this.db.collection("text")
-      .get().toPromise()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.txtList.push(doc.data());
-        });
-        for (let i: number = this.txtList.length - 1; i > -1; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          const temp = this.txtList[i];
-          this.txtList[i] = this.txtList[j]
-          this.txtList[j] = temp;
-        }
-      })
-      .catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
 
-
-
-  }
 
 
 

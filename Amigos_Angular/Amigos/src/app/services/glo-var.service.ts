@@ -11,6 +11,10 @@ export class GloVarService {
   isDarkTheme: boolean = false;
   darkBody = new BehaviorSubject<boolean>(false)
 
+  txtList: Array<any> = []
+
+
+
 
 
 

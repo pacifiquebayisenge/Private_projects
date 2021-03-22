@@ -28,6 +28,11 @@
 
 }
 
+::ng-deep body {
+  overscroll-behavior: contain;
+}
+
+
 
 .title,
 .title2 {

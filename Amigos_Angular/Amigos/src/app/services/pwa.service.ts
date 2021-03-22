@@ -43,6 +43,7 @@ export class PwaService {
 
   checkUpdates(): void {
     this.updates.available.subscribe(event => {
+      console.log("UPDATE")
       this.updates.activateUpdate().then(() => document.location.reload())
     })
   }
