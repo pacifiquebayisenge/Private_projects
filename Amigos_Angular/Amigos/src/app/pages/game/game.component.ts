@@ -60,7 +60,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
 
     console.log(this.txtList.length)
-    console.log(this.texts.text.length)
+
 
 
 

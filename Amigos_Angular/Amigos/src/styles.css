@@ -21,3 +21,16 @@ body {
   font-size: large;
   background-color: #3f3f50 !important;
 }
+
+.snackbar {
+  background-color: rgba(77, 77, 77, 0.2);
+  backdrop-filter: blur(5px);
+  color: orange;
+  font-weight: bolder;
+  text-align: center;
+}
+
+simple-snack-bar span {
+  margin: auto;
+  text-align: center;
+}

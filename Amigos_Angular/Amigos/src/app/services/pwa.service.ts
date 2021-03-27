@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ApplicationRef } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { timer } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { timer, interval } from 'rxjs';
+import { take, timeInterval } from 'rxjs/operators';
 import { PromptComponent } from '../tools/prompt-component/prompt-component.component';
 import { SwUpdate } from '@angular/service-worker';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { GloVarService } from './glo-var.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +19,12 @@ export class PwaService {
   constructor(
     private bottomSheet: MatBottomSheet,
     private platform: Platform,
-    private updates: SwUpdate
-  ) { }
+    private updates: SwUpdate,
+    private _snackBar: MatSnackBar,
+    private gloVar: GloVarService
+  ) {
+    this.updateApp()
+  }
 
   public initPwaPrompt() {
     if (this.platform.ANDROID) {
@@ -41,12 +48,45 @@ export class PwaService {
       .subscribe(() => this.bottomSheet.open(PromptComponent, { panelClass: 'custom-bottom-sheet', data: { mobileType, promptEvent: this.promptEvent } }));
   }
 
-  checkUpdates(): void {
+  updateApp(): void {
+
+
     this.updates.available.subscribe(event => {
+
       console.log("UPDATE")
-      this.updates.activateUpdate().then(() => document.location.reload())
+
+
+      this._snackBar.open("A new update will be installed shrotly", "", {
+        duration: 2000,
+        panelClass: ['snackbar']
+      })
+
+      setTimeout(() => {
+        this.updates.activateUpdate().then(() => document.location.reload())
+      }, 3000);
+
+
     })
+
   }
+
+  checkUpdates() {
+
+    console.log(this.gloVar.homePage)
+    this.gloVar.homePage.asObservable().subscribe(() => {
+
+      const timeInterval = interval(60 * 60 * 1000);
+
+      timeInterval.subscribe(() => {
+        this.updates.checkForUpdate().then(() => console.log("checked"));
+        console.log("update checked");
+      });
+
+    });
+
+  }
+
+
 
 
 

@@ -64,6 +64,10 @@
   color: #f24fe6;
 }
 
+button .invisible {
+  position: absolute;
+}
+
 button {
   margin: 3rem;
   width: 20%;
@@ -113,5 +117,9 @@ button {
     height: 8%;
     font-size: 1.5rem;
 
+  }
+
+  button .invisible {
+    position: absolute;
   }
 }

@@ -3,7 +3,8 @@
 
 
 
-  <span [ngClass]="{'title': !this.gloVarService.isDarkTheme, 'title2' : this.gloVarService.isDarkTheme}">{{ title }}
+  <span (click)="trippleTap()"
+    [ngClass]="{'title': !this.gloVarService.isDarkTheme, 'title2' : this.gloVarService.isDarkTheme}">{{ title }}
   </span>
 
 
@@ -11,7 +12,7 @@
   <p>🔧 Beta ⚙️</p>
   <p>Drinks are best when mixed with friends!</p>
 
-  <button mat-raised-button color=primary (click)="openDialog()">START</button>
+  <button mat-raised-button color=primary (click)="openDialog()" (click)="loadData()">START</button>
   <div class="toggle-container">
     <mat-slide-toggle (click)="darkmode()" color="primary" [(ngModel)]=this.gloVarService.isDarkTheme>dark mode
     </mat-slide-toggle>

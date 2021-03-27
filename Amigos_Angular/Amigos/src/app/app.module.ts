@@ -20,9 +20,11 @@ import { PromptComponent } from './tools/prompt-component/prompt-component.compo
 import { GameComponent } from './pages/game/game.component';
 import { CardComponent } from './pages/game/components/card/card.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatBottomSheetModule, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material/bottom-sheet';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 // 1. Import the libs you need
@@ -31,6 +33,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SplashComponent } from './pages/splash/splash.component';
+
+
 
 
 
@@ -61,6 +65,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
 
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -73,6 +78,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     FormsModule,
     MatDialogModule,
     MatToolbarModule,
+    MatSnackBarModule,
     MatIconModule,
     MatCardModule,
     AngularFireModule.initializeApp(firebaseConfig),
@@ -83,6 +89,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true },
+
   ],
   bootstrap: [AppComponent]
 })
