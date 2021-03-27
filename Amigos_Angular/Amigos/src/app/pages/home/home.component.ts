@@ -4,8 +4,6 @@ import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
-import { PwaService } from 'src/app/services/pwa.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -21,8 +19,6 @@ export class HomeComponent implements OnInit {
     public dialog: MatDialog,
     public gloVarService: GloVarService,
     private db: AngularFirestore,
-    private pwaService: PwaService,
-    private _snackBar: MatSnackBar,
   ) { }
 
   title = 'A M I G O S';

@@ -2,7 +2,6 @@ import { Component, OnInit, AfterContentInit, AfterViewInit, ViewChild, ElementR
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
-import * as kf from './components/card/keyframes';
 import { TxtService } from 'src/app/services/txt.service';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -39,7 +38,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.height = '50%'
-    const dialogRef = this.dialog.open(ReminderComponent, dialogConfig);
+    this.dialog.open(ReminderComponent, dialogConfig);
 
 
   }
@@ -156,6 +155,8 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /*
+
   txtToDb() {
 
     this.texts.text.forEach(item => {
@@ -176,7 +177,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   }
 
-
+*/
 
 
 
