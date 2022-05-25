@@ -4,6 +4,7 @@ import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
     public dialog: MatDialog,
     public gloVarService: GloVarService,
     private db: AngularFirestore,
+    private router: Router
   ) { }
 
   title = 'A M I G O S';
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
   trippleTap() {
 
     if (this.tapCount > 14) {
-      console.log('admin');
+      this.router.navigate(['/splash'])
       this.tapCount = 0;
     }
 
@@ -65,8 +67,11 @@ export class HomeComponent implements OnInit {
 
   darkmode() {
     document.querySelector('body').style.backgroundImage = ""
+
     if (!this.gloVarService.isDarkTheme) {
       document.querySelector('body').style.backgroundColor = "rgb(53, 1, 65)"
+
+
     } else {
       document.querySelector('body').style.backgroundColor = "#3f3f50"
     }
@@ -119,4 +124,6 @@ export class HomeComponent implements OnInit {
       });
 
   }
+
+
 }

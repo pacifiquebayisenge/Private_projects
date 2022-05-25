@@ -1,5 +1,6 @@
 {
   "hosting": [{
+      "target": "Amigos",
       "public": "dist/Amigos",
       "ignore": [
         "firebase.json",

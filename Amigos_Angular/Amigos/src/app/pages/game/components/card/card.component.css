@@ -53,6 +53,7 @@ span {
 
 .cardTitle,
 .cardTitle2 {
+  text-align: center;
   margin: 1rem;
   font-size: 3rem;
   font-family: 'Roboto';

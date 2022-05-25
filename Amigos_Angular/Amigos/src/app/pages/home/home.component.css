@@ -26,7 +26,8 @@
 
 .title,
 .title2 {
-  margin: 1rem;
+
+  margin: 20% 1rem 1rem;
   font-size: 6rem;
   font-family: 'Roboto';
   font-weight: bolder;
@@ -66,7 +67,7 @@
 
 
 button {
-  margin: 3rem;
+  margin: 2rem;
   width: 20%;
   height: 10%;
   font-size: 2rem;
@@ -93,7 +94,7 @@ button {
 
   button {
     margin: 3rem;
-    width: 30%;
+    width: 40%;
     height: 10%;
     font-size: 1.5rem;
     color: white;
@@ -105,15 +106,26 @@ button {
 
   .title,
   .title2 {
+    margin: 10% 1rem 1rem;
     font-size: 5rem;
   }
 
   button {
-    margin: 3rem;
-    width: 25%;
+    margin: 2rem;
+    width: 30%;
     height: 8%;
     font-size: 1.5rem;
 
+  }
+
+
+}
+
+@media screen and (max-width: 3000px) and (min-width: 1441px) {
+
+  .title,
+  .title2 {
+    margin: 10% 1rem 1rem;
   }
 
 

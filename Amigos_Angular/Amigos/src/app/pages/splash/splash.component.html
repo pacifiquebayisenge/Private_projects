@@ -1,2 +1,22 @@
-<img src="../../../assets/icons/RENDER.png">
-<button mat-raised-button routerLink="/">BACK</button>
+<div class="content">
+
+  <div class="scrollContainer">
+
+    <div class="suggi" *ngFor="let i of this.txtList">
+      <p>
+        {{i.txt}}
+      </p>
+      <p style="text-align: center;margin-top: 5rem;">
+        {{i.name}}
+      </p>
+      <div class="btns">
+        <button mat-raised-button class="NOT" (click)="delete(i.id)">NOT</button>
+        <button mat-raised-button class="OK" (click)="add(i)">OK</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <button mat-raised-button routerLink="/">BACK</button>
+</div>

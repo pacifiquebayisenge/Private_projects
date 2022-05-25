@@ -1,0 +1,24 @@
+<div class="content mat-app-background mainView" role="main"
+  [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
+  <img src="../../../assets/icons/RENDER.png" alt="">
+  <div class="container">
+
+
+    <p>😚 Add your own card and make it more fun 😝</p>
+
+
+
+    <form [formGroup]="suggestionT">
+      <textarea id="subject" name="subject" placeholder="Write something.." maxlength=193
+        formControlName="suggi"></textarea>
+
+      <input *ngIf="this.playerName == ''" type="text" placeholder="Your name..." formControlName="name">
+      <div>
+        <button mat-raised-button class="bColor" routerLink="/">Back</button>
+        <button mat-raised-button color=primary (click)="submit()">SUBMIT</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>

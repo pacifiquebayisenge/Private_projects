@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReminderComponent } from './dialog/reminder.component';
 import { HomeComponent } from './pages/home/home.component'
@@ -24,6 +24,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 
 
@@ -33,6 +34,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SplashComponent } from './pages/splash/splash.component';
+import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 
 
 
@@ -62,6 +64,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     CardComponent,
     PromptComponent,
     SplashComponent,
+    SuggestionComponent,
 
 
 
@@ -84,7 +87,9 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    TextFieldModule,
+    ReactiveFormsModule,
 
   ],
   providers: [

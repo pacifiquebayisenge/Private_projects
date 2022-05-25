@@ -1,4 +1,5 @@
-<div class="content mat-app-background" role="main" [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
+<div class="content mat-app-background mainView" role="main"
+  [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
 
   <div #stack class="card-container">
     <app-card [ngClass]="{'border': !this.gloVarService.isDarkTheme, 'dark-border' : this.gloVarService.isDarkTheme}"

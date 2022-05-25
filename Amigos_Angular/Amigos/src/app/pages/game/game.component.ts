@@ -45,6 +45,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
+
     this.txtList = this.gloVarService.txtList
 
     for (let i: number = this.txtList.length - 1; i > -1; i--) {
@@ -155,6 +156,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
   }
 
+
   /*
 
   txtToDb() {
@@ -177,9 +179,9 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   }
 
+
+
 */
-
-
 
 
 

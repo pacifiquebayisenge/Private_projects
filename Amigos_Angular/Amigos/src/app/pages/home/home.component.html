@@ -1,4 +1,5 @@
-<div class="content mat-app-background" role="main" [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
+<div class="content mat-app-background mainView" role="main"
+  [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
 
 
 
@@ -9,10 +10,12 @@
 
 
   <!-- <span class="title2">{{ title }} </span>-->
-  <p>🔧 Beta ⚙️</p>
+  <p>🔧 Beta 0.4.0 ⚙️</p>
+  <p>Drinking quote of today: </p>
   <p>Drinks are best when mixed with friends!</p>
 
   <button mat-raised-button color=primary (click)="openDialog()" (click)="loadData()">START</button>
+  <button mat-raised-button color=primary routerLink="suggestion">SUGGESTION</button>
   <div class="toggle-container">
     <mat-slide-toggle (click)="darkmode()" color="primary" [(ngModel)]=this.gloVarService.isDarkTheme>dark mode
     </mat-slide-toggle>

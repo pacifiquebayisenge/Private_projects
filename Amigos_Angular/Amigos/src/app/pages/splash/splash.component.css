@@ -1,8 +1,32 @@
-img {
-  width: 100%;
-  margin: 0;
-  position: absolute;
-  top: 40%;
-  -ms-transform: translateY(-40%);
-  transform: translateY(-40%);
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  justify-items: center;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button {
+  margin: 1rem;
+}
+
+.suggi {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(107 107 107);
+  border-radius: 15px;
+}
+
+p {
+  font-family: sans-serif;
+  font-weight: 900;
+  color: #00000080;
 }

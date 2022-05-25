@@ -93,7 +93,7 @@ export class TxtService {
     { id: 82, t: "All partners are divorced. To celebrate this everyone has to a sip." },
     { id: 83, t: "If you've ever seen one of your friends cheat on their partner, take a sip" },
     { id: 84, t: "Spin around for each time a song ends. The last to spin around, takes 2 sips" },
-    { id: 85, t: "Take 3 sips, if you like booty 🍑" },
+    { id: 85, t: "Take 3 sips, if you like booty 🍑; tqke é if you prefer (man)boobs" },
     { id: 86, t: "3 sips for the last one who just got a new drink" },
     { id: 87, t: "Vote without questioning who gets laid the least. That person takes a sip" },
     { id: 88, t: "All partners are divorced. To celebrate this everyone has to a sip." },

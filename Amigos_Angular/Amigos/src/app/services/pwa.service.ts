@@ -43,7 +43,7 @@ export class PwaService {
   }
 
   private openPromptComponent(mobileType: 'ios' | 'android') {
-    timer(3000)
+    timer(50)
       .pipe(take(1))
       .subscribe(() => this.bottomSheet.open(PromptComponent, { panelClass: 'custom-bottom-sheet', data: { mobileType, promptEvent: this.promptEvent } }));
   }
