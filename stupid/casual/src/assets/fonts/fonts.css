@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("./OpenSansHebrew-Bold.ttf");
+
+
+
+}
+
+
+@font-face {
+  font-family: "Open Sans Extra Bold";
+  src: url("./OpenSansHebrew-ExtraBold.ttf");
+
+
+}
+
+@font-face {
+
+
+  font-family: "Open Sans Italic";
+  src: url("./OpenSansHebrew-Italic.ttf");
+
+
+
+}
+
+@font-face {
+
+
+  font-family: "Open Sans Extra Bold Italic";
+  src: url("./OpenSansHebrew-ExtraBoldItalic.ttf");
+
+
+
+}

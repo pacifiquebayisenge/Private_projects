@@ -5,7 +5,7 @@ import { GloVarService } from './services/glo-var.service'
 import { BehaviorSubject } from 'rxjs';
 import { PwaService } from './services/pwa.service';
 import * as firebase from 'firebase';
-
+import { Meta } from "@angular/platform-browser";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,13 +21,18 @@ export class AppComponent implements OnInit, OnChanges {
   constructor(
     public gloVarService: GloVarService,
     private pwaService: PwaService,
-
+    private meta: Meta
 
   ) {
     this.pwaService.checkUpdates()
   }
 
   ngOnInit() {
+
+    this.meta.updateTag({
+      name: 'theme-color',
+      content: 'rgb(252, 186, 3)'
+    });
 
     if (this.gloVarService.isDarkTheme) {
       document.querySelector('body').style.backgroundImage = "linear-gradient(to top, #350141, #350141)"
