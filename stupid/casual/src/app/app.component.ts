@@ -1,65 +1,35 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { formatDate } from '@angular/common';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    // Each unique animation requires its own trigger. The first argument of the trigger function is the name
+    trigger('rotatedState', [
+      state('default', style({ transform: 'rotate(0)' })),
+      state('rotated', style({ transform: 'rotate(-180deg)' })),
+      transition('rotated => default', animate('1500ms ease-out')),
+      transition('default => rotated', animate('400ms ease-in')),
+    ]),
+  ],
 })
 export class AppComponent implements AfterViewInit {
-
-
   title = 'casual';
 
-  @ViewChild('contentDiv')
-  d1!: ElementRef;
-
-
-  imgSetup = (): string => {
-
-    let imgDoms = "";
-    let num = 0;
-
-
-    if (new Date(formatDate(new Date(), 'yyyy-MM-dd', 'en_US')) > new Date('2022-06-18')) {
-
-      for (let i = 0; i <= 25; i++) {
-
-
-        imgDoms = imgDoms + `<img class="img" src="../assets/img/${i}.png">`
-
-
-      }
-
-      return imgDoms;
-
-    }
-
-
-
-    num = parseInt(formatDate(new Date(), 'dd', 'en_US'));
-
-
-    for (let i = 0; i <= num; i++) {
-
-
-      imgDoms = imgDoms + `<img class="img" src="../assets/img/${i}.png">`
-
-
-    }
-
-    return imgDoms;
-
+  state: string = 'default';
+  rotate() {
+    this.state = this.state === 'default' ? 'rotated' : 'default';
   }
-
-
 
   ngAfterViewInit(): void {
-
-    this.imgSetup();
-    this.d1.nativeElement.insertAdjacentHTML('beforeend', this.imgSetup());
+    this.rotate();
   }
-
-
-
 }

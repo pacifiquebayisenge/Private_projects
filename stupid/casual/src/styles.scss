@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: rgb(48, 50, 52);
+  background-color: rgb(0, 0, 0);
   overflow: auto;
   -ms-overflow-style: none;
   /* IE and Edge */
@@ -13,14 +13,7 @@ body {
 
   .img {
     margin: 0.3rem;
+    margin-top: 3rem;
     width: 20vw;
-  }
-
-  .imgHaku {
-    height: 10vh;
-  }
-
-  .imgRabbit {
-    height: 9vh;
   }
 }
