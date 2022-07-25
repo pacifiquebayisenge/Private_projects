@@ -1,5 +1,12 @@
 .dark-theme-mode.mat-app-background {
-  background-image: linear-gradient(to top, #350141, #2f023b, #290335, #23022f, #1f0029);
+  background-image: linear-gradient(
+    to top,
+    #350141,
+    #2f023b,
+    #290335,
+    #23022f,
+    #1f0029
+  );
   color: white;
 }
 
@@ -7,16 +14,12 @@
   color: white;
 }
 
-::ng-deep .mat-card:not([class*=mat-elevation-z]),
-::ng-deep .dark-theme-mode .mat-card:not([class*=mat-elevation-z]) {
+::ng-deep .mat-card:not([class*="mat-elevation-z"]),
+::ng-deep .dark-theme-mode .mat-card:not([class*="mat-elevation-z"]) {
   box-shadow: none;
 }
 
-
-
 ::ng-deep .content {
-
-
   align-items: center;
   text-align: center;
   display: flex;
@@ -24,17 +27,20 @@
   height: 100%;
   width: 100%;
   min-width: 100%;
-  background-image: linear-gradient(to top, #3f3f50, #383847, #31313f, #2b2b36, #24242e);
+  background-image: linear-gradient(
+    to top,
+    #3f3f50,
+    #383847,
+    #31313f,
+    #2b2b36,
+    #24242e
+  );
   color: white;
   top: 0;
   bottom: 0;
 
   position: absolute;
-
-
 }
-
-
 
 ::ng-deep body {
   overscroll-behavior: contain;
@@ -42,13 +48,11 @@
   border: 0;
 }
 
-
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 button {
   margin: 3rem;
@@ -58,15 +62,19 @@ button {
   padding: 1rem 2rem;
 }
 
-
-
 .border,
 .dark-border {
-
-
   border-radius: 4px;
   overflow: hidden;
-  background: linear-gradient(to right, #fff 20%, #fff 40%, #4FE5F3 50%, #4FE5F3 55%, #fff 70%, #fff 100%);
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #fff 40%,
+    #4fe5f3 50%,
+    #4fe5f3 55%,
+    #fff 70%,
+    #fff 100%
+  );
   background-size: 200% auto;
   padding: 1%;
   transition: 300ms;
@@ -77,23 +85,27 @@ button {
 .dark-border {
   border-radius: 4px;
   overflow: hidden;
-  background: linear-gradient(to right, #424242 20%, #424242 40%, #f24fe6 50%, #f24fe6 55%, #424242 70%, #424242 100%);
+  background: linear-gradient(
+    to right,
+    #424242 20%,
+    #424242 40%,
+    #f24fe6 50%,
+    #f24fe6 55%,
+    #424242 70%,
+    #424242 100%
+  );
   background-size: 200% auto;
   padding: 1%;
   transition: 300ms;
 
   animation: shine 4s linear infinite;
-
 }
-
-
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 textarea,
@@ -118,14 +130,12 @@ input {
 }
 
 input {
-
   margin: 1rem;
   width: unset;
   height: unset;
 }
 
 p {
-
   font-family: sans-serif;
   font-weight: 900;
   display: block;
@@ -149,10 +159,8 @@ img {
   background-color: orange;
 }
 
-
 /* Responsive Styles */
 @media screen and (max-width: 500px) {
-
   img {
     transition: 800ms;
     width: 20rem;
@@ -160,9 +168,7 @@ img {
   }
 
   button {
-
     font-size: large;
-
   }
 
   .card-container {
@@ -174,7 +180,6 @@ img {
 }
 
 @media screen and (max-width: 1440px) and (min-width: 501px) {
-
   img {
     transition: 800ms;
 
@@ -194,7 +199,6 @@ img {
     max-width: 450px;
     width: 450px;
   }
-
 }
 
 @media screen and (max-width: 2000px) and (min-width: 1441px) {
@@ -204,7 +208,6 @@ img {
     width: 25rem;
     height: 25rem;
   }
-
 
   .card-container {
     position: relative;
@@ -218,5 +221,4 @@ img {
     max-width: 500px;
     width: 500px;
   }
-
 }

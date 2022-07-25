@@ -1,27 +1,32 @@
-<div class="content mat-app-background mainView" role="main"
-  [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
-
-
-
-
-  <span (click)="trippleTap()"
-    [ngClass]="{'title': !this.gloVarService.isDarkTheme, 'title2' : this.gloVarService.isDarkTheme}">{{ title }}
+<div
+  class="content mat-app-background mainView"
+  role="main"
+  [ngClass]="{ 'dark-theme-mode': this.gloVarService.isDarkTheme }"
+>
+  <span
+    (click)="trippleTap()"
+    [ngClass]="{
+      title: !this.gloVarService.isDarkTheme,
+      title2: this.gloVarService.isDarkTheme
+    }"
+    >{{ title }}
   </span>
-
 
   <!-- <span class="title2">{{ title }} </span>-->
   <p>🔧 Beta 0.4.1 ⚙️</p>
-  <p>Drinking quote of today: </p>
+  <p>Drinking quote of today:</p>
   <p>Drinks are best when mixed with friends!</p>
 
-  <button mat-raised-button color=primary (click)="openDialog()" (click)="loadData()">START</button>
-  <button mat-raised-button color=primary routerLink="suggestion">SUGGESTION</button>
+  <button mat-raised-button color="primary" (click)="loadData()">START</button>
+  <button mat-raised-button color="primary" routerLink="suggestion">
+    SUGGESTION
+  </button>
   <div class="toggle-container">
-    <mat-slide-toggle (click)="darkmode()" color="primary" [(ngModel)]=this.gloVarService.isDarkTheme>dark mode
+    <mat-slide-toggle
+      (click)="darkmode()"
+      color="primary"
+      [(ngModel)]="this.gloVarService.isDarkTheme"
+      >dark mode
     </mat-slide-toggle>
   </div>
-
-
-
-
 </div>

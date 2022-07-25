@@ -1,0 +1,29 @@
+<div
+  class="container mat-app-background mainView"
+  role="main"
+  [ngClass]="{ 'dark-theme-mode': this.gloVarService.isDarkTheme }"
+>
+  <img src="../../../assets/icons/RENDER.png" alt="" />
+
+  <form [formGroup]="allNames">
+    <div *ngFor="let field of names().controls; let i = index">
+      <div>
+        <input type="text" placeholder="Palyer {{ i + 1 }}" />
+        <button mat-raised-button class="closeBtn" (click)="removeNameField(i)">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <button mat-raised-button color="primary" (click)="addNameField()">
+    Add Player
+  </button>
+
+  <button mat-raised-button color="primary">START</button>
+
+  <p class="reminderText">
+    Friendly reminder to drink responsibly. Alcohol abuse is a real danger, by
+    continuing you acknowledge to be responsible for the consequences that may
+    happen. Somebody loves you, so be careful and come home safely.
+  </p>
+</div>

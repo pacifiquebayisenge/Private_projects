@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  resize: none;
+
+  transition: 800ms;
+  max-width: 300px;
+  max-height: 180px;
+  width: 300px;
+  height: 180px;
+  border-radius: 15px;
+  padding: 1rem;
+
+  font-size: large;
+  font-family: sans-serif;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  color: #00000095;
+}
+
+input {
+  margin: 1rem;
+  width: unset;
+  height: unset;
+}
+
+p {
+  font-family: sans-serif;
+  font-weight: 900;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+}
+
+.reminderText {
+  width: 80%;
+  margin: 1rem 0rem;
+  text-align: center;
+  color: white;
+}
+
+img {
+  transition: 800ms;
+  width: 35rem;
+  height: 35rem;
+}
+
+.closeBtn {
+  background-color: transparent;
+  color: white;
+}
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+  img {
+    transition: 800ms;
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 501px) {
+  img {
+    transition: 800ms;
+
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 2000px) and (min-width: 1441px) {
+  img {
+    transition: 800ms;
+
+    width: 20rem;
+    height: 20rem;
+  }
+}

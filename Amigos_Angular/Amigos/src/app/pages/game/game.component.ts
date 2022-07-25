@@ -1,4 +1,11 @@
-import { Component, OnInit, AfterContentInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterContentInit,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
@@ -9,20 +16,16 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit, AfterViewInit {
-
   constructor(
     public dialog: MatDialog,
     public gloVarService: GloVarService,
     public texts: TxtService,
     private router: Router,
     private db: AngularFirestore
-
-  ) { }
-
-
+  ) {}
 
   @ViewChild('stack') stack: ElementRef;
 
@@ -30,99 +33,71 @@ export class GameComponent implements OnInit, AfterViewInit {
   cardTxt: string;
   cardElem: Array<any>;
   txtList: Array<any> = [];
-  tapCount: number = 25;
 
   openDialog() {
-
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.height = '50%'
+    dialogConfig.height = '50%';
     this.dialog.open(ReminderComponent, dialogConfig);
-
-
   }
 
   ngOnInit() {
-
-
-    this.txtList = this.gloVarService.txtList
+    this.txtList = this.gloVarService.txtList;
 
     for (let i: number = this.txtList.length - 1; i > -1; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       const temp = this.txtList[i];
-      this.txtList[i] = this.txtList[j]
+      this.txtList[i] = this.txtList[j];
       this.txtList[j] = temp;
     }
 
     if (this.txtList.length == 0) this.router.navigate(['/']);
 
-
-
-    console.log(this.txtList.length)
-
-
-
-
-
-
-
+    console.log(this.txtList.length);
   }
 
   darkmode() {
-    document.querySelector('body').style.backgroundImage = ""
+    document.querySelector('body').style.backgroundImage = '';
     if (!this.gloVarService.isDarkTheme) {
-      document.querySelector('body').style.backgroundColor = "rgb(53, 1, 65)"
+      document.querySelector('body').style.backgroundColor = 'rgb(53, 1, 65)';
     } else {
-      document.querySelector('body').style.backgroundColor = "#3f3f50"
+      document.querySelector('body').style.backgroundColor = '#3f3f50';
     }
   }
 
   ngAfterViewInit() {
     this.removeAllBorder();
-
   }
 
   tap(elem: any) {
-
-
-
     this.cardTxt = elem.id;
-    this.cardElem = this.txtList[this.txtList.length - 1]
+    this.cardElem = this.txtList[this.txtList.length - 1];
 
-
-    console.log(this.txtList[this.txtList.length - 1])
+    console.log(this.txtList[this.txtList.length - 1]);
     this.removeBorderAni();
-    elem.style.animation = 'swap 700ms';
-
+    elem.style.animation = 'swap 800ms';
 
     setTimeout(() => {
       elem.style.animation = '';
-      this.txtList.pop()
-      this.checkLast()
+      this.txtList.pop();
+      this.checkLast();
       //this.txtList.unshift(this.cardElem)
       setTimeout(() => {
         this.addBorderAni();
         this.removeAllBorder();
-      }, 100);
-
-    }, 700);
-
-    if (this.tapCount == 0) this.router.navigate(['/']);
-    this.tapCount--
-
+      }, 50);
+    }, 850);
   }
 
   checkLast() {
-    console.log(this.txtList.length)
+    console.log(this.txtList.length);
     if (this.txtList.length == 0) {
       this.router.navigate(['/']);
     }
   }
 
   addBorderAni() {
-
-
     let stackArray = this.stack.nativeElement.children;
     let lastChild = stackArray[stackArray.length - 1];
 
@@ -131,21 +106,12 @@ export class GameComponent implements OnInit, AfterViewInit {
     } else {
       lastChild.classList.add('border');
     }
-
-
-
-
-
   }
 
   removeBorderAni() {
-
     let stackArray = this.stack.nativeElement.children;
     let lastChild = stackArray[stackArray.length - 1];
     lastChild.classList = '';
-
-
-
   }
 
   removeAllBorder() {
@@ -155,7 +121,6 @@ export class GameComponent implements OnInit, AfterViewInit {
       stackArray[i].classList = '';
     }
   }
-
 
   /*
 
@@ -182,11 +147,4 @@ export class GameComponent implements OnInit, AfterViewInit {
 
 
 */
-
-
-
-
-
-
-
 }

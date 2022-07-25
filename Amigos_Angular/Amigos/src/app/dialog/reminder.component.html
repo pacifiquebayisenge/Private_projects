@@ -1,15 +1,19 @@
 <div class="content">
-
-  <h2 [ngClass]="{'title': !this.gloVarService.isDarkTheme, 'title2' : this.gloVarService.isDarkTheme}"
-    mat-dialog-title>Note</h2>
+  <h2
+    [ngClass]="{
+      title: !this.gloVarService.isDarkTheme,
+      title2: this.gloVarService.isDarkTheme
+    }"
+    mat-dialog-title
+  >
+    Note
+  </h2>
 
   <div class="mat-typography txtbx">
-
-
-
     <p class="text">
-      Friendly reminder to drink responsibly. Alcohol abuse is a real danger, by continuing you acknowledge to be
-      responsible for the consequences that may happen. Somebody loves you, so be careful and come home safely.
+      Friendly reminder to drink responsibly. Alcohol abuse is a real danger, by
+      continuing you acknowledge to be responsible for the consequences that may
+      happen. Somebody loves you, so be careful and come home safely.
     </p>
   </div>
 

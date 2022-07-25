@@ -1,13 +1,18 @@
 .dark-theme-mode.mat-app-background {
-  background-image: linear-gradient(to top, #350141, #2f023b, #290335, #23022f, #1f0029);
+  background-image: linear-gradient(
+    to top,
+    #350141,
+    #2f023b,
+    #290335,
+    #23022f,
+    #1f0029
+  );
   color: white;
 }
 
 .dark-theme-mode .mat-raised-button.mat-primary {
   color: white;
 }
-
-
 
 .content {
   align-items: center;
@@ -16,59 +21,51 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to top, #3f3f50, #383847, #31313f, #2b2b36, #24242e);
+  background-image: linear-gradient(
+    to top,
+    #3f3f50,
+    #383847,
+    #31313f,
+    #2b2b36,
+    #24242e
+  );
   color: white;
   position: absolute;
   top: 0;
   bottom: 0;
 }
 
-
 .title,
 .title2 {
-
   margin: 20% 1rem 1rem;
   font-size: 6rem;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: bolder;
-  text-shadow:
-    1px -0.5px 1px #37a6b7,
-    1.5px -1px 1px #37a6b7,
-    2px -1.5px 1px #37a6b7,
-    2.5px -2px 1px #37a6b7,
-    3px -2.5px 1px #37a6b7,
-    3.5px -3px 1px #37a6b7,
-    4px -3.5px 1px #37a6b7,
-    4.5px -4px 1px #37a6b7,
-    5px -4.5px 1px #37a6b7,
-    5.5px -5px 1px #37a6b7;
-
+  text-shadow: 1px -0.5px 1px #37a6b7, 1.5px -1px 1px #37a6b7,
+    2px -1.5px 1px #37a6b7, 2.5px -2px 1px #37a6b7, 3px -2.5px 1px #37a6b7,
+    3.5px -3px 1px #37a6b7, 4px -3.5px 1px #37a6b7, 4.5px -4px 1px #37a6b7,
+    5px -4.5px 1px #37a6b7, 5.5px -5px 1px #37a6b7;
 
   color: #4fe5f3;
 }
 
 .title2 {
-
-  text-shadow:
-    1px -0.5px 1px #b63784,
-    1.5px -1px 1px #b63784,
-    2px -1.5px 1px #b63784,
-    2.5px -2px 1px #b63784,
-    3px -2.5px 1px #b63784,
-    3.5px -3px 1px #b63784,
-    4px -3.5px 1px #b63784,
-    4.5px -4px 1px #b63784,
-    5px -4.5px 1px #b63784,
-    5.5px -5px 1px #b63784;
-
+  text-shadow: 1px -0.5px 1px #b63784, 1.5px -1px 1px #b63784,
+    2px -1.5px 1px #b63784, 2.5px -2px 1px #b63784, 3px -2.5px 1px #b63784,
+    3.5px -3px 1px #b63784, 4px -3.5px 1px #b63784, 4.5px -4px 1px #b63784,
+    5px -4.5px 1px #b63784, 5.5px -5px 1px #b63784;
 
   color: #f24fe6;
 }
 
-
 button {
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 2rem;
-  width: 20%;
+  min-width: 20%;
   height: 10%;
   font-size: 2rem;
 }
@@ -81,29 +78,28 @@ button {
   width: 50%;
 }
 
-
-
-
 /* Responsive Styles */
 @media screen and (max-width: 500px) {
-
   .title,
   .title2 {
     font-size: 3rem;
   }
 
   button {
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 3rem;
-    width: 40%;
+    min-width: 40%;
     height: 10%;
     font-size: 1.5rem;
     color: white;
-
   }
 }
 
 @media screen and (max-width: 1440px) and (min-width: 501px) {
-
   .title,
   .title2 {
     margin: 10% 1rem 1rem;
@@ -111,22 +107,21 @@ button {
   }
 
   button {
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 2rem;
-    width: 30%;
+    min-width: 30%;
     height: 8%;
     font-size: 1.5rem;
-
   }
-
-
 }
 
 @media screen and (max-width: 3000px) and (min-width: 1441px) {
-
   .title,
   .title2 {
     margin: 10% 1rem 1rem;
   }
-
-
 }

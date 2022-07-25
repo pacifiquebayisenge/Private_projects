@@ -35,6 +35,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SplashComponent } from './pages/splash/splash.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
+import { GameConfigComponent } from './pages/game-config/game-config.component';
 
 
 
@@ -65,6 +66,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     PromptComponent,
     SplashComponent,
     SuggestionComponent,
+    GameConfigComponent,
 
 
 
