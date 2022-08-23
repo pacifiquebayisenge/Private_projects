@@ -1,10 +1,35 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.dark-theme-mode.mat-app-background {
+  background-image: linear-gradient(
+    to top,
+    #350141,
+    #2f023b,
+    #290335,
+    #23022f,
+    #1f0029
+  );
+  color: white;
 }
 
+.dark-theme-mode .mat-raised-button.mat-primary {
+  color: white;
+}
+
+.content {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to top,
+    #3f3f50,
+    #383847,
+    #31313f,
+    #2b2b36,
+    #24242e
+  );
+}
 strong {
   font-size: 1.5rem;
   color: darkred;
