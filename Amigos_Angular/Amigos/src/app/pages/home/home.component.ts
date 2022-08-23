@@ -5,6 +5,7 @@ import { ReminderComponent } from 'src/app/dialog/reminder.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
+import { PwaService } from 'src/app/services/pwa.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
     public dialog: MatDialog,
     public gloVarService: GloVarService,
     private db: AngularFirestore,
-    private router: Router
+    private router: Router,
+    private pwa: PwaService
   ) {}
 
   title = 'A M I G O S';
@@ -27,6 +29,7 @@ export class HomeComponent implements OnInit {
 
   tapCount = 0;
   trippleTap() {
+    this.update();
     if (this.tapCount > 14) {
       this.router.navigate(['/splash']);
       this.tapCount = 0;
@@ -62,6 +65,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  update() {
+    this.pwa.updateApp();
+  }
+
   dbb = firebase.default.firestore();
 
   async loadData() {
@@ -91,6 +98,7 @@ export class HomeComponent implements OnInit {
 
           var source = snapshot.metadata.fromCache ? 'local cache' : 'server';
           console.log('Data came from ' + source);
+          this.router.navigate(['/config']);
           this.router.navigate(['/config']);
         });
       });
