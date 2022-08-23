@@ -10,13 +10,13 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GloVarService } from 'src/app/services/glo-var.service';
 import { ReminderComponent } from 'src/app/dialog/reminder.component';
 import { TxtService } from 'src/app/services/txt.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css'],
+  styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit, AfterViewInit {
   constructor(
@@ -24,7 +24,8 @@ export class GameComponent implements OnInit, AfterViewInit {
     public gloVarService: GloVarService,
     public texts: TxtService,
     private router: Router,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private ARouter: ActivatedRoute
   ) {}
 
   @ViewChild('stack') stack: ElementRef;
@@ -33,6 +34,8 @@ export class GameComponent implements OnInit, AfterViewInit {
   cardTxt: string;
   cardElem: Array<any>;
   txtList: Array<any> = [];
+  players: string[] = [];
+  player = '';
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -43,6 +46,17 @@ export class GameComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.players = this.gloVarService.playersList;
+
+    this.gloVarService.txtList.forEach((element) => {
+      var index = Math.floor(
+        Math.random() * (this.players.length - 1 - 0 + 1) + 0
+      );
+      this.player = this.players[index];
+
+      element.player = this.player;
+    });
+
     this.txtList = this.gloVarService.txtList;
 
     for (let i: number = this.txtList.length - 1; i > -1; i--) {
@@ -52,9 +66,16 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.txtList[j] = temp;
     }
 
+    this.player = this.players[0];
+
     if (this.txtList.length == 0) this.router.navigate(['/']);
 
     console.log(this.txtList.length);
+  }
+
+  rdmPlayer() {
+    var index = Math.floor(Math.random() * (this.players.length - 0 + 1) + 0);
+    this.player = this.players[index];
   }
 
   darkmode() {

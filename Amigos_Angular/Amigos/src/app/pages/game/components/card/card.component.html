@@ -1,27 +1,23 @@
 <mat-card class="example-card border">
-
-
   <mat-card-content>
-
+    <div class="player">
+      <p>{{ player }}</p>
+    </div>
     <div class="text">
       <p>
-        {{text}}
-
+        {{ text }}
       </p>
-
     </div>
 
     <footer>
-      <span [ngClass]="{'cardTitle': !this.gloVarService.isDarkTheme, 'cardTitle2' : this.gloVarService.isDarkTheme}">
-        A M I G O S</span>
+      <span
+        [ngClass]="{
+          cardTitle: !this.gloVarService.isDarkTheme,
+          cardTitle2: this.gloVarService.isDarkTheme
+        }"
+      >
+        A M I G O S</span
+      >
     </footer>
-
-
-
   </mat-card-content>
-
-
-
-
-
 </mat-card>

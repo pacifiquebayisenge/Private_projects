@@ -1,13 +1,22 @@
-<div class="content mat-app-background mainView" role="main"
-  [ngClass]="{'dark-theme-mode' : this.gloVarService.isDarkTheme} ">
-
+<div
+  class="content mat-app-background mainView"
+  role="main"
+  [ngClass]="{ 'dark-theme-mode': this.gloVarService.isDarkTheme }"
+>
   <div #stack class="card-container">
-    <app-card [ngClass]="{'border': !this.gloVarService.isDarkTheme, 'dark-border' : this.gloVarService.isDarkTheme}"
-      *ngFor="let i of this.txtList" [text]="i.txt" [id]="i.id" (click)="tap($event.currentTarget)">
+    <app-card
+      [ngClass]="{
+        border: !this.gloVarService.isDarkTheme,
+        'dark-border': this.gloVarService.isDarkTheme
+      }"
+      *ngFor="let i of this.txtList"
+      [text]="i.txt"
+      [id]="i.id"
+      [player]="i.player"
+      (click)="tap($event.currentTarget)"
+    >
     </app-card>
-
   </div>
 
-  <button mat-raised-button color=primary routerLink="/">End</button>
-
+  <button mat-raised-button color="primary" routerLink="/">End</button>
 </div>

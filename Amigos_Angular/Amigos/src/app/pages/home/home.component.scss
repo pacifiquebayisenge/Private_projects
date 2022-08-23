@@ -59,14 +59,13 @@
 }
 
 button {
-  padding: 2rem 1rem;
+  padding: 1rem 2rem;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2rem;
-  min-width: 20%;
-  height: 10%;
+
   font-size: 2rem;
 }
 
@@ -86,14 +85,13 @@ button {
   }
 
   button {
-    padding: 2rem 1rem;
+    padding: 1rem 2rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem;
-    min-width: 40%;
-    height: 10%;
+    margin: 1rem 2rem;
+
     font-size: 1.5rem;
     color: white;
   }
@@ -107,14 +105,13 @@ button {
   }
 
   button {
-    padding: 2rem 1rem;
+    padding: 1rem 2rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
-    min-width: 30%;
-    height: 8%;
+    margin: 1rem 2rem;
+
     font-size: 1.5rem;
   }
 }

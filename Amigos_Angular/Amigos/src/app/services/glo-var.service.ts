@@ -2,22 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GloVarService {
-
-  constructor() { }
+  constructor() {}
 
   isDarkTheme: boolean = false;
-  darkBody = new BehaviorSubject<boolean>(false)
-  homePage = new BehaviorSubject<boolean>(false)
+  darkBody = new BehaviorSubject<boolean>(false);
+  homePage = new BehaviorSubject<boolean>(false);
 
-  txtList: Array<any> = []
+  txtList: Array<any> = [];
 
-
-
-
-
-
-
+  playersList: string[] = [];
 }

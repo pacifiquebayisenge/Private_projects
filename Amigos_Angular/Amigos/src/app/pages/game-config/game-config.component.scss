@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+strong {
+  font-size: 1.5rem;
+  color: darkred;
+}
+
 input {
   resize: none;
 
@@ -62,6 +67,17 @@ img {
   background-color: transparent;
   color: white;
 }
+
+.gamebtns {
+  padding: 1rem 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 500px) {
   img {
